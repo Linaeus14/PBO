@@ -53,21 +53,23 @@ public class data {
         int idx;
         produk prd = new produk();
 
-        System.out.println("Masukan index yang diganti : ");
+        System.out.print("Masukan index yang diganti : ");
         idx = Integer.parseInt(inp.readLine());
         System.out.println("Masukan data yang baru! ");
         prd.create();
 
-        plist.set(idx, prd);
+        plist.set(idx-1, prd);
+        System.out.println(">> Telah berhasil diubah!\n");
     }
 
     public void Delete() throws IOException {
 
         int idx;
 
-        System.out.println("Masukan index yang ingin dihapus : ");
+        System.out.print("Masukan index yang ingin dihapus : ");
         idx = Integer.parseInt(inp.readLine());
 
-        plist.remove(idx);
+        plist.remove(idx-1);
+        System.out.println(">> Telah berhasil dihapus!\n");
     }
 }
