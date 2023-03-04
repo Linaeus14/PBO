@@ -33,7 +33,7 @@ public class data {
         produk prd = new produk();
         prd.create();
         plist.add(prd);
-        System.out.println(">> " + plist.get(plist.size()-1) + " berhasil ditambah!\n");
+        System.out.println(">> " + plist.get(plist.size()-1).nama + " berhasil ditambah!\n");
     }
 
     public void Read() throws IOException {
