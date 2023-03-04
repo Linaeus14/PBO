@@ -20,7 +20,7 @@ public class produk {
         nama = inp.readLine();
         System.out.print(">> Masukan Nama Produsen Barang :");
         produsen = inp.readLine();
-        System.out.print(">> Masukan Tipe Produsen Barang :");
+        System.out.print(">> Masukan Tipe Barang :");
         tipe = inp.readLine();
         System.out.print(">> Masukan Harga Barang :");
         harga = Integer.parseInt(inp.readLine());
