@@ -2,8 +2,8 @@
 
 ## Bio
 
-Nama : Tito Darmawan
-NIM  : 2109106042
+> Nama : Tito Darmawan
+> NIM  : 2109106042
 
 ## List Posttest
 
