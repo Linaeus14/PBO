@@ -31,11 +31,13 @@ public class obj_prd {
     }
 
     private String getPrdn(obj_prdn obj) throws IOException {
+        
         System.out.print("\n>> Pilih Produsen Produk (0 Untuk batal) :\n");
         for(int i = 0;i < (obj.getArraylist()).size();i++) {
             System.out.println("     " + (i+1) + ". " + ((obj.getArraylist()).get(i)).getNama());
         }
         System.out.println("     " + ((obj.getArraylist()).size()+1) + ". - (Kosongkan)");
+
         int input;
         do {
             input = Integer.parseInt(inp.readLine());
@@ -44,10 +46,16 @@ public class obj_prd {
             }
         }
         while(input > ((obj.getArraylist()).size()+1) & input != 0);
+        
         if (input == 0) {
             return "/0";
         }
-        return ((obj.getArraylist()).get(input-1)).getNama();
+        else if(input == ((obj.getArraylist()).size()+1)) {
+            return " ";
+        }
+        else{
+            return ((obj.getArraylist()).get(input-1)).getNama();
+        }
     }
 
     public void Create(obj_prdn obj) throws IOException {
