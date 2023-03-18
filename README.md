@@ -16,3 +16,8 @@
 > Posttest 2
 >> Konstruktor
 >> Enkapsulasi objek (Private Class Attribute, Getter dan Setter)
+
+|
+
+> Posttest 3
+>> Inheritance
