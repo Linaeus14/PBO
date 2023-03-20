@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import data.barang.produk.*;
 import data.orang.produsen.*;
 
-public class posttets3 {
+public class posttest3 {
 
     public static void main(String[] args) {
 
