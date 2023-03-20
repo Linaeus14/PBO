@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import data.produk.*;
 import data.produsen.*;
 
-public class Main {
+public class posttest2 {
 
     public static void main(String[] args) throws IOException {
 

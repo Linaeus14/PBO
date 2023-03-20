@@ -1,7 +1,7 @@
 import java.io.IOException;
 import obj.data;
 
-public class Main {
+public class posttest1 {
 
     public static void main(String[] args) throws IOException {
 
