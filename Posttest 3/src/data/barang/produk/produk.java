@@ -1,14 +1,13 @@
-package data.produk;
+package data.barang.produk;
 
-import data.object;
+import data.barang.*;
 
-public class produk extends object {
+public class produk extends barang {
 
-    protected String nama;
-    protected String produsen;
-    protected String kategori;
-    protected int harga;
-    protected int stok;
+    private String produsen;
+    private String kategori;
+    private int harga;
+    private int stok;
 
     public produk(String nama, String produsen, String kategori, int harga, int stok) {
         super(nama);

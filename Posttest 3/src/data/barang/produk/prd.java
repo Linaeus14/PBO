@@ -1,19 +1,14 @@
-package data.produk;
+package data.barang.produk;
 
 import data.data;
-import data.produsen.*;
+import data.orang.produsen.*;
 
 import java.util.ArrayList;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class prd extends data {
 
     ArrayList<produk> plist = new ArrayList<produk>();
-
-    InputStreamReader isr = new InputStreamReader(System.in);
-    BufferedReader inp = new BufferedReader(isr);
 
     public ArrayList<produk> getArraylist() {
         return plist;
@@ -88,7 +83,7 @@ public class prd extends data {
     public void Update(prdn obj) {
 
         try {
-            System.out.print("Masukan index yang diganti : ");
+            System.out.print("Masukan urutan yang ingin diganti : ");
             int idx = Integer.parseInt(inp.readLine());
 
             System.out.print("\n>> Masukan Nama Produk :");
@@ -111,25 +106,19 @@ public class prd extends data {
     
             System.out.println(">> Telah berhasil diubah!\n");
 
-        } catch (NumberFormatException | IOException e) {
+        } catch (NumberFormatException | IOException | IndexOutOfBoundsException e) {
             System.out.println("Terjadi Salah input mohon coba lagi!");
         }
     }
 
-
     public void Delete(prd obj) {
 
-        System.out.print("Masukan urutan yang ingin dihapus : ");
         try {
-            int idx = Integer.parseInt(inp.readLine());
-            if (idx < 1 & idx > obj.getArraylist().size()) {
-                System.out.println("Tidak ada nomor urut " + idx + "!");
-                return;
-            }
+            int idx = Idx("Masukan urutan yang ingin dihapus : ");
             obj.getArraylist().remove(idx - 1);
             System.out.println(">> Telah berhasil dihapus!\n");
-        } catch (NumberFormatException | IOException e) {
-            System.out.println("Input salah (hanya angka)!");
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Input tidak ada di urutan!");
         }
     }
 }

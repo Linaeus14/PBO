@@ -1,11 +1,11 @@
-package data;
+package data.barang;
 
-public class object {
+public class barang {
     
     String nama;
 
 
-    public object(String nama) {
+    public barang(String nama) {
         this.nama = nama;
     }
 

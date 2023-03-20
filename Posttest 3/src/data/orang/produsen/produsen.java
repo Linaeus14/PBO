@@ -1,14 +1,14 @@
-package data.produsen;
+package data.orang.produsen;
 
-import data.object;
+import data.orang.*;
 
-public class produsen extends object {
+public class produsen extends orang {
 
     private String alamat;
     private String keterangan;
 
-    public produsen(String nama, String alamat, String keterangan) {
-        super(nama);
+    public produsen(String nama, String kontak, String alamat, String keterangan) {
+        super(nama, kontak);
         this.alamat = alamat;
         this.keterangan = keterangan;
     }

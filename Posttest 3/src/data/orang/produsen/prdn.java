@@ -1,18 +1,13 @@
-package data.produsen;
+package data.orang.produsen;
 
 import data.data;
 
 import java.util.ArrayList;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class prdn extends data {
 
     ArrayList<produsen> prlist = new ArrayList<produsen>();
-
-    InputStreamReader isr = new InputStreamReader(System.in);
-    BufferedReader inp = new BufferedReader(isr);
 
     public ArrayList<produsen> getArraylist() {
         return prlist;
@@ -23,13 +18,16 @@ public class prdn extends data {
         System.out.print("\n>> Masukan Nama produsen :");
         String nama = inp.readLine();
 
+        System.out.print(">> Masukan kontak produsen :");
+        String kontak = inp.readLine();
+
         System.out.print(">> Masukan alamat produsen :");
         String alamat = inp.readLine();
 
         System.out.print(">> Masukan keterangan produsen :");
         String keterangan = inp.readLine();
 
-        prlist.add(new produsen(nama, alamat, keterangan));
+        prlist.add(new produsen(nama, kontak, alamat, keterangan));
         System.out.println(">> " + prlist.get(prlist.size() - 1).getNama() + " berhasil ditambah!\n");
     }
 
@@ -38,42 +36,44 @@ public class prdn extends data {
         System.out.println("\n  == List Produk ==\n");
         for (int i = 0; i < prlist.size(); i++) {
             System.out.println("     " + (i + 1) + ". " + (prlist.get(i)).getNama());
+            System.out.println("        " + (prlist.get(i)).getKontak());
             System.out.println("        " + (prlist.get(i)).getAlamat());
             System.out.println("        " + (prlist.get(i)).getKeterangan());
         }
     }
 
-    public void Update() throws IOException {
+    public void Update() {
 
-        int idx;
-        System.out.print("Masukan index yang diganti : ");
-        idx = Integer.parseInt(inp.readLine());
+        try{
+            int idx = Idx("Masukan urutan yang ingin diganti : ");
 
-        System.out.print("\n>> Masukan Nama produsen :");
-        (prlist.get(idx - 1)).setNama(inp.readLine());
+            System.out.print("\n>> Masukan Nama produsen :");
+            (prlist.get(idx - 1)).setNama(inp.readLine());
 
-        System.out.print(">> Masukan alamat produsen :");
-        (prlist.get(idx - 1)).setAlamat(inp.readLine());
+            System.out.print(">> Masukan kontak produsen :");
+            (prlist.get(idx - 1)).setKontak(inp.readLine());
 
-        System.out.print(">> Masukan keterangan produsen :");
-        (prlist.get(idx - 1)).setKeterangan(inp.readLine());
+            System.out.print(">> Masukan alamat produsen :");
+            (prlist.get(idx - 1)).setAlamat(inp.readLine());
 
-        System.out.println(">> Telah berhasil diubah!\n");
+            System.out.print(">> Masukan keterangan produsen :");
+            (prlist.get(idx - 1)).setKeterangan(inp.readLine());
+
+            System.out.println(">> Telah berhasil diubah!\n");
+
+        } catch (IOException | IndexOutOfBoundsException e) {
+            System.out.println("Terjadi Salah input mohon coba lagi!");
+        }
     }
 
     public void Delete(prdn obj) {
 
-        System.out.print("Masukan urutan yang ingin dihapus : ");
         try {
-            int idx = Integer.parseInt(inp.readLine());
-            if (idx < 1 & idx > obj.getArraylist().size()) {
-                System.out.println("Tidak ada nomor urut " + idx + "!");
-                return;
-            }
+            int idx = Idx("Masukan urutan yang ingin dihapus : ");
             obj.getArraylist().remove(idx - 1);
             System.out.println(">> Telah berhasil dihapus!\n");
-        } catch (NumberFormatException | IOException e) {
-            System.out.println("Input salah (hanya angka)!");
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Input tidak ada di urutan!");
         }
     }
 }

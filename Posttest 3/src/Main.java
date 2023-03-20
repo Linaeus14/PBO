@@ -2,8 +2,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import data.produk.*;
-import data.produsen.*;
+import data.barang.produk.*;
+import data.orang.produsen.*;
 
 public class Main {
 
@@ -11,30 +11,19 @@ public class Main {
 
         prd dta1 = new prd();
         prdn dta2 = new prdn();
-
-        InputStreamReader isr = new InputStreamReader(System.in);
-        BufferedReader inp = new BufferedReader(isr);
-
-        String menu1 = """
+        BufferedReader inp = new BufferedReader(new InputStreamReader(System.in));
+        String menu = """
                 <=  Pendataan Barang Toko Elektronik  =>
                     \n> Menu :
                     1. Data Barang
                     2. Data Produsen
                     3. Keluar
                     Masukan Pilihan :""";
-        String menu2 = """
-            \n> Menu :
-                1. Tambah Data
-                2. Lihat Data
-                3. Ubah data
-                4. Hapus Data
-                5. Kembali
-                Masukan Pilihan :""";
 
         while (true) {
 
             try {
-                System.out.print(menu1);
+                System.out.print(menu);
                 int input = Integer.parseInt(inp.readLine());
 
                 if (input == 1) {
@@ -43,7 +32,7 @@ public class Main {
                     while (loop) {
                         
                         System.out.println("  <=  Menu Produk  =>  ");
-                        input = dta1.Menu(menu2);
+                        input = dta1.Menu();
                         switch (input) {
                             case 1 -> dta1.Create(dta2);
                             case 2 -> dta1.Read();
@@ -59,7 +48,7 @@ public class Main {
                     while (loop) {
 
                         System.out.println("  <=  Menu Produsen  =>  ");
-                        input = dta2.Menu(menu2);
+                        input = dta2.Menu();
                         switch (input) {
                             case 1 -> dta2.Create();
                             case 2 -> dta2.Read();
