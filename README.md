@@ -20,4 +20,9 @@
 |
 
 > Posttest 3
->> Inheritance
+>> Inheritance (data -> prdn, prd | barang -> produk | orang -> produsen)
+
+|
+
+> Posttest 4
+>> Polymorphism (overload : data | override : prdn, prd)
