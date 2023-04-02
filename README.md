@@ -26,3 +26,8 @@
 
 > Posttest 4
 >> Polymorphism (overload : data | override : prdn, prd)
+
+|
+
+> Posttest 5
+>> Abstract dan Final (Abstract : data | Final : produk, produsen, prdn, prd)
