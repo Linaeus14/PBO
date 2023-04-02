@@ -6,8 +6,8 @@ import java.io.InputStreamReader;
 
 public abstract class data<type1, type2> {
 
-    private BufferedReader inp = new BufferedReader(new InputStreamReader(System.in));
-    private String menu = """
+    private final BufferedReader inp = new BufferedReader(new InputStreamReader(System.in));
+    private final String menu = """
         \n> Menu :
             1. Tambah Data
             2. Lihat Data
@@ -68,7 +68,7 @@ public abstract class data<type1, type2> {
         }
     }
 
-    public int Menu() {
+    public final int Menu() {
         return Input(menu, 0);
     }
 }

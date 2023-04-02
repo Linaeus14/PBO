@@ -30,4 +30,4 @@
 |
 
 > Posttest 5
->> Abstract dan Final (Abstract : data | Final : produk, produsen, prdn, prd)
+>> Abstract dan Final (Abstract : (class, method) {data} | Final : (class) {produk, produsen, prdn, prd}, (variable, method) {data})
