@@ -31,3 +31,8 @@
 
 > Posttest 5
 >> Abstract dan Final (Abstract : (class, method) {data} | Final : (class) {produk, produsen, prdn, prd}, (variable, method) {data})
+
+|
+
+> Posttest 6
+>> Interface dan Static (Interface : input -> dataInput | Static : data, posttest6 )
